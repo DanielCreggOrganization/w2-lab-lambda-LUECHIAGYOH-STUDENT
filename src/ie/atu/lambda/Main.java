@@ -2,13 +2,13 @@ package ie.atu.lambda;
 
 public class Main {
     public static void main(String[] args) {
-        // Create an instance of ToUpperCase
-        StringOperation toUpperCase = new ToUpperCase();
-        
-        // Test the apply method
-        String result = toUpperCase.apply("Hello World!");
-        
-        // Output the result
-        System.out.println("Result: " + result);
+        // Using a lambda expression for MathOperation (Addition)
+        MathOperation addition = (a, b) -> a + b;  // Lambda for addition
+        System.out.println("Addition: " + addition.operate(5, 3)); // Output: 8
+
+        // Using a lambda expression for StringOperation (To Upper Case)
+        StringOperation toUpperCase = str -> str.toUpperCase(); // Lambda for uppercase
+        String result = toUpperCase.apply("hello world");
+        System.out.println("Result: " + result); // Output: "HELLO WORLD"
     }
 }
