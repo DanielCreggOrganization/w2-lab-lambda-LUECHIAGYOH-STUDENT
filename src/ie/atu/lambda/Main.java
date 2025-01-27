@@ -1,14 +1,13 @@
 package ie.atu.lambda;
-
 public class Main {
     public static void main(String[] args) {
-        // Using a lambda expression for MathOperation (Addition)
-        MathOperation addition = (a, b) -> a + b;  // Lambda for addition
-        System.out.println("Addition: " + addition.operate(5, 3)); // Output: 8
+        // Step 1: Create a Runnable using a lambda expression
+        Runnable task = () -> System.out.println("Hello from the thread");
 
-        // Using a lambda expression for StringOperation (To Upper Case)
-        StringOperation toUpperCase = str -> str.toUpperCase(); // Lambda for uppercase
-        String result = toUpperCase.apply("hello world");
-        System.out.println("Result: " + result); // Output: "HELLO WORLD"
+        // Step 2: Create a new thread with the Runnable
+        Thread thread = new Thread(task);
+
+        // Step 3: Start the thread
+        thread.start();
     }
 }
